@@ -33,3 +33,4 @@
 </head>
 
 <body>
+    <div class="container-xxl bg-white p-0">
