@@ -1,12 +1,14 @@
 <?php
-
 require 'database.php';
 
-$stmt = $conn->prepare("SELECT * FROM guests");
+$id = $_GET['id'];
+
+$stmt = $conn->prepare("SELECT * FROM guests WHERE guest_id = :id");
+$stmt->bindParam(':id', $id);
 $stmt->execute();
 
 // set the resulting array to associative
-$guests = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$guest = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -36,16 +38,13 @@ $guests = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <th>email</th>
       <th>dob</th>
     </tr>
-    <?php foreach ($guests as $guest): ?>
     <tr>
       <td><?php echo $guest['guest_id']?></td>
       <td><?php echo $guest['firstname']?></td>
       <td><?php echo $guest['lastname']?></td>
       <td><?php echo $guest['email']?></td>
       <td><?php echo $guest['dob']?></td>
-      <td><a href="guest_dital.php?id=<?php echo $guest['guest_id'] ?>">info</a></td>
     </tr>
-    <?php endforeach; ?>
   </table>
 </body>
 </html>
