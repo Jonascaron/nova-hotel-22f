@@ -41,14 +41,15 @@ $rooms = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </tr>
     <?php foreach ($rooms as $room): ?>
     <tr>
-      <td><?php echo $room['room_id']?></td>
-      <td><?php echo $room['room_number']?></td>
-      <td><?php echo $room['room_type']?></td>
-      <td><?php echo $room['bed_count']?></td>
-      <td><?php echo $room['bathroom_type']?></td>
-      <td><?php echo $room['view_type']?></td>
-      <td><?php echo $room['floor_level']?></td>
-      <td><?php echo $room['has_balcony']?></td>
+      <td><?php echo $room['room_id'] ?></td>
+      <td><?php echo $room['room_number'] ?></td>
+      <td><?php echo $room['room_type'] ?></td>
+      <td><?php echo $room['bed_count'] ?></td>
+      <td><?php echo $room['bathroom_type'] ?></td>
+      <td><?php echo $room['view_type'] ?></td>
+      <td><?php echo $room['floor_level'] ?></td>
+      <td><?php echo $room['has_balcony'] == 1 ? 'ja' : 'nee'?></td>
+      <td><a href="rooms_delete.php?id=<?php echo $room['room_id'] ?>">delete</a></td>
     </tr>
     <?php endforeach; ?>
   </table>
