@@ -2,7 +2,7 @@
 
 require 'database.php';
 
-$stmt = $conn->prepare("SELECT * FROM guests");
+$stmt = $conn->prepare("SELECT * FROM users WHERE role = 'guest'");
 $stmt->execute();
 
 // set the resulting array to associative
@@ -38,12 +38,12 @@ $guests = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </tr>
     <?php foreach ($guests as $guest): ?>
     <tr>
-      <td><?php echo $guest['guest_id']?></td>
+      <td><?php echo $guest['user_id']?></td>
       <td><?php echo $guest['firstname']?></td>
       <td><?php echo $guest['lastname']?></td>
       <td><?php echo $guest['email']?></td>
       <td><?php echo $guest['dob']?></td>
-      <td><a href="guest_dital.php?id=<?php echo $guest['guest_id'] ?>">info</a></td>
+      <td><a href="guest_dital.php?id=<?php echo $guest['users_id'] ?>">info</a></td>
     </tr>
     <?php endforeach; ?>
   </table>
