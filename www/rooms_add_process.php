@@ -4,12 +4,12 @@ require "database.php";
 // set the resulting array to associative
 
 if(!isset($_POST['room_number'])) {
-  echo "hoi";
+  echo "je mag hier niet zijn";
   exit;
 }
 
 if(empty($_POST['room_number']) || empty($_POST['room_type']) || empty($_POST['bed_count']) || empty($_POST['bathroom_type']) || empty($_POST['view_type']) || empty($_POST['floor_level']) || empty($_POST['has_balcony'])) {
-  echo "nee";
+  echo "er is een invoor veld leeg";
   exit;
 }
 
@@ -20,7 +20,7 @@ $stmt->bindParam(':room_number', $room_number);
 $stmt->execute();
 
 if($stmt->rowCount() != 0) {
-  echo "hij werkt";
+  echo "de kamer nummer bestaat al";
   exit;
 }
 
