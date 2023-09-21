@@ -29,7 +29,7 @@ $rooms = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
   <div>
-    <a href="room.php">kamer aanmaken</a>
+    <a href="room_add.php">kamer aanmaken</a>
   </div>
   <table>
     <tr>
