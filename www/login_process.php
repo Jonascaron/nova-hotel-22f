@@ -28,6 +28,7 @@ if(isset($_POST['email']) && !empty($_POST['email'])  ) {
       $_SESSION['password'] = $myGuests['password'];
       $_SESSION['dob'] = $myGuests['dob'];
       $_SESSION['role'] = $myGuests['role'];
+      $_SESSION['image'] = $myGuests['image'];
 
 
       if($myGuests['role'] == 'guest') {

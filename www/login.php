@@ -16,6 +16,9 @@
         <input type="password" name="password" id="" required>
         <button type="submit">login</button>
       </form>
+      <div>
+        <p>nog geen account <a href="register.php">register hier</a></p>
+      </div>
     </div>
   </div>
 </body>

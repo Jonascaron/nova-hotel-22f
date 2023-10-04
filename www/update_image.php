@@ -6,9 +6,9 @@
   <title>Document</title>
 </head>
 <body>
-  <form action="update_image_process.php" method="post">
-    <input type="file" name="image" id="">
-  </form>
-  
+  <form action="update_image_process.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="image" id="image">
+    <button type="submit">submit</button>
+  </form> 
 </body>
 </html>
